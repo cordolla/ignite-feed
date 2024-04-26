@@ -46,18 +46,7 @@
     align-items: center;
     gap: 1rem;
   }
-  
-  .author img {
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    border: 3px solid var(--gray-600);
-    cursor: pointer;
-    margin-bottom: 0.5rem;
-  
-    transition: border 0.3s;
-  }
-  
+    
   .avatar:hover {
     border: 3px solid var(--green-500);
   }
@@ -125,4 +114,8 @@
 
   .commentForm button:hover {
     background: var(--green-300);
+  }
+
+  .commentList {
+    margin-top: 2rem;
   }

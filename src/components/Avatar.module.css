@@ -1,0 +1,11 @@
+.avatar {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: 3px solid var(--gray-600);
+    margin-top: -2.25rem;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+  
+    transition: border 0.3s;
+  }

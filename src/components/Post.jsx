@@ -1,15 +1,13 @@
+import { Avatar } from "./Avatar";
 import styles from "./Post.module.css";
+import { Comment } from "./Comment";
 
 export const Post = () => {
   return (
     <article className={styles.post}>
       <header className={styles.header}>
         <div className={styles.author}>
-          <img
-            className={styles.avatar}
-            src="https://github.com/cordolla.png"
-            alt=""
-          />
+          <Avatar src="https://github.com/cordolla.png"/>
           <div className={styles.authorInfo}>
             <strong>Marcelo Cordolla</strong>
             <span>Web Developer</span>
@@ -45,6 +43,10 @@ export const Post = () => {
           <button type="submit">Publicar</button>
         </footer>
       </form>
+
+      <div className={styles.commentList}>
+        <Comment />
+      </div>
     </article>
   );
 };
