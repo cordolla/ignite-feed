@@ -2,9 +2,40 @@ import { Header } from './components/Header';
 import { Post } from './components/Post';
 import { Sidebar } from './components/Sidebar';
 
+import styles from "./App.module.css";
+
 import './global.css';
 
-import styles from "./App.module.css";
+const posts = [
+  {
+    id: 1,
+    author: {
+      avatarUrl: 'http://github.com/cordolla.png',
+      name: 'Marcelo Cordolla',
+      role: 'Dev Junior'
+    },
+    content: [
+      { type: 'paragraph', content: 'Fala Galera' },
+      { type: 'paragraph', content: 'Acabei de subir mais um projeto nomeu portifa' },
+      { type: 'link', content: 'jane.design/doctorcare' },
+    ],
+    publishedAt: new Date('2024-05-02 20:00:00'),
+  },
+  {
+    id: 2,
+    author: {
+      avatarUrl: 'http://github.com/vitoria.png',
+      name: 'Antonia Vitoria',
+      role: 'Dev Junior'
+    },
+    content: [
+      { type: 'paragraph', content: 'Fala Galera' },
+      { type: 'paragraph', content: 'Acabei de subir mais um projeto nomeu portifa' },
+      { type: 'link', content: 'jane.design/doctorcare' },
+    ],
+    publishedAt: new Date('2024-05-02 20:00:00'),
+  }
+]
 
 export function App() {
   return (
@@ -14,9 +45,16 @@ export function App() {
         <div className={styles.wrapper}>
           <Sidebar />
           <main>
-            <Post author="Marcelo" content="Texto aqui" />
-            <Post author="Vitoria" content="texto 2 aqui" />
-            <Post author="Maria" content="Texto 3 aqui" />
+            {posts.map(posts => {
+              return (
+              <Post 
+                key={posts.id}
+                author={posts.author}
+                content={posts.content}
+                publishedAt={posts.publishedAt}
+              />
+              )
+            })}            
           </main>
         </div>
     </>
